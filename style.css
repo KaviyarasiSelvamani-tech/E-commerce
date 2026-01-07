@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+}
+
+.center {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.btn {
+    display: block;
+    background: #f0c14b;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.small {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.center-text {
+    text-align: center;
+    margin: 20px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.category a {
+    background: white;
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    width: 160px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+
+.old {
+    text-decoration: line-through;
+    color: gray;
+    margin-left: 5px;
+}/* ---------- Selection Effect ---------- */
+
+.selectable {
+    position: relative;
+}
+
+.selectable-card {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+/* Blur all cards when container is active */
+.selectable:focus-within .selectable-card {
+    filter: blur(3px);
+    opacity: 0.6;
+}
+
+/* Highlight selected card */
+.selectable-card:focus {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.05);
+    border: 2px solid #f0c14b;
+    background: #fffbe6;
+    z-index: 1;
+}/* -------- PRODUCT SELECTION (MOBILE SAFE) -------- */
+
+.selectable input {
+    display: none;
+}
+
+/* Default cards */
+.selectable .card {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Highlight selected card */
+.selectable input:checked + .card {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.05);
+    border: 2px solid #f0c14b;
+    background: #fffbe6;
+    z-index: 2;
+}
